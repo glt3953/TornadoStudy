@@ -15,6 +15,9 @@ class MainHandler(tornado.web.RequestHandler):
     def get(self):
         self.write("Hello, world")
 
+    def on_message(self, message):
+        self.write(message)
+
 
 class EchoWebSocket(tornado.websocket.WebSocketHandler):
     def open(self):
