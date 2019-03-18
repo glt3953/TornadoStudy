@@ -27,7 +27,6 @@ if __name__ == "__main__":
                                             (r"/wrap", WrapHandler)
                                             ]
                                   )
-                                  app.listen(options.port)
-#                                  http_server = tornado.httpserver.HTTPServer(app)
-#                                  http_server.listen(options.port)
-                                  tornado.ioloop.IOLoop.instance().start()
+    http_server = tornado.httpserver.HTTPServer(app)
+    http_server.listen(options.port)
+    tornado.ioloop.IOLoop.instance().start()
