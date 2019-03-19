@@ -21,6 +21,7 @@ class MainHandler(tornado.web.RequestHandler):
 
 class EchoWebSocket(tornado.websocket.WebSocketHandler):
     def open(self):
+        self.write_message('connected!')
         print("WebSocket opened")
 
     def on_message(self, message):
